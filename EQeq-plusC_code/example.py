@@ -18,7 +18,7 @@ Tkk_para = cm5tkk_para
 qtot = 2.0
 
 # Calculate the charges using the optimized parameters
-chg_l = get_EQeq_pC_chg(pdbf, qtot, fq_para_dict, Tkk_para, hardness_equ='charmm', aa_dict=at_dict)
+chg_l = get_EQeq_pC_chg(pdbf, qtot, fq_para_dict, Tkk_para, hardness_equ='simple', aa_dict=at_dict)
 print(chg_l)
 
 quit()
