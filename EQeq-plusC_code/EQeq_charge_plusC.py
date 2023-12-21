@@ -45,7 +45,7 @@ def cal2_Jij(r):
 
 ###############################################################################
 # This is the main program to calculate the Qeq charges
-# The default method for calculating the hardness is the CHARMM method
+# The default method for calculating the hardness is the simple method
 ###############################################################################
 def get_EQeq_pC_chg(pdbf, qtot, fq_para_dict, Tkk_para, hardness_equ='simple', aa_dict=ATOM_TYPE_DICT):
 
