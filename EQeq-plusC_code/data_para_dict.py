@@ -147,7 +147,7 @@ co_radii_dict = {
     }
 
 # CM5 EQeq parameters
-cm5qeq_para = {
+cm5eqeq_para = {
    "CT3":  [319.65,240.34],
    "HA3":  [233.88,497.29],
    "CT2":  [301.52,215.37],
