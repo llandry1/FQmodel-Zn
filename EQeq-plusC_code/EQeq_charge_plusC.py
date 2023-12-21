@@ -39,10 +39,8 @@ def cal_Jij(J_i, J_j, r, die=1.0):
     Eo = exp(-(J_ij*r/K)**2) * (J_ij / K - (J_ij**2) * r / (K**2) - 1.0 / r)
     return (K / 2.0 / die) * (1.0 / r + Eo)
 
-# This is the charmm hardness equation
-# Eq 3 of JCC, 2004, 25, 1-16
-def cal2_Jij(J_i, J_j, r):
-    Jij = (0.5 * (J_i + J_j))/(sqrt(1 + 0.25 * (J_i + J_j)**2 * r**2))
+def cal2_Jij(r):
+    Jij = 1.0 / 7.0 * 0.5 * K / r
     return Jij
 
 ###############################################################################
@@ -107,7 +105,7 @@ def get_EQeq_pC_chg(pdbf, qtot, fq_para_dict, Tkk_para, hardness_equ='charmm', a
                 if hardness_equ == 'eqeq':
                     Jij = cal_Jij(J_i, J_j, disij)
                 elif hardness_equ == 'charmm':
-                    Jij = cal2_Jij(J_i, J_j, disij)
+                    Jij = cal2_Jij(disij)
             J_matrix[i-1, j-1] = Jij
             J_matrix[j-1, i-1] = Jij
 
